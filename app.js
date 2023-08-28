@@ -9,6 +9,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+import user from "../server/routes/user.js";
+import todo from "../server/routes/todo.js";
+
+app.use("/user", user);
+app.use("/todo", todo);
+
 app.use(
   cors({
     origin: "http://localhost:4000",
