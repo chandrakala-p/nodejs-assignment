@@ -9,15 +9,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-import user from "../server/routes/user.js";
-import todo from "../server/routes/todo.js";
+import user from "./routes/user.js";
+import todo from "./routes/todo.js";
 
 app.use("/user", user);
 app.use("/todo", todo);
 
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: "http://localhost:3000",
   })
 );
 
